@@ -1,0 +1,2 @@
+#!/bin/bash
+chmod ugoa+x hello
