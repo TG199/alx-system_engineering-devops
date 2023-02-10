@@ -1,0 +1,2 @@
+#!/bin/bash
+chown -m vincent[:staff] 
