@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -m vincent[:staff] 
+sudo chown -R vincent:staff
