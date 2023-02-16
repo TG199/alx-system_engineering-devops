@@ -1,2 +1,2 @@
 #!/bin/bash
-< sed -n 'p;n'
+perl lne 'print if $. % 2 == 1'
