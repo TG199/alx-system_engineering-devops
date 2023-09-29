@@ -19,7 +19,7 @@ do
 		*)
 			echo "$i"
 			;;
-		esac
-		i=$((i+1))
+	esac
+	i=$((i+1))
 
 done
