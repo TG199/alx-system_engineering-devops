@@ -15,6 +15,6 @@ do
 			echo "bad luck from italy"
 			;;
 	esac
-	i=$((i+1))
+	((i++))
 
 done
