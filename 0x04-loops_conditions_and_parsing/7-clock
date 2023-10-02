@@ -5,7 +5,7 @@ hour=0
 while [ $hour -le 20 ]
 do
 	minute=1
-	echo "Hour:$hour"
+	echo "Hour: $hour"
 	while [ $minute -le 59 ]
 	do
 		echo "$minute"
