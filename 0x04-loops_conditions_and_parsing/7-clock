@@ -2,13 +2,13 @@
 # A Bash script that displays the time for 12 hours and 59 minutes
 hour=0
 
-while [ $hour -le 20 ]
+while [ $hour -le 12 ]
 do
 	minute=1
 	echo "Hour: $hour"
 	while [ $minute -le 59 ]
 	do
-		echo " $minute"
+		echo "$minute"
 		((minute++))
 	done
 	((hour++))
