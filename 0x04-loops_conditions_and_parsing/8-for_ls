@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Bash script that display files of a directory
+for file in *
+do
+    if [[ $file == *-* ]]
+    then
+        name_after_dash="${file#*-}"
+        echo "$name_after_dash"
+    else
+        echo "$file"
+    fi
+done
