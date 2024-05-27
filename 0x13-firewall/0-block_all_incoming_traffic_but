@@ -1,3 +1,4 @@
+ufw enable
 ufw default deny incoming
 ufw allow 22
 ufw allow 433
