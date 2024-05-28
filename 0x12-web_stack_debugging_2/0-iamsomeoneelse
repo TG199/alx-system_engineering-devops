@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Scripts that display user name
+sudo -u "$1" whoami
+
