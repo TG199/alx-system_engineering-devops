@@ -1,46 +1,25 @@
 #!/usr/bin/python3
-""" Script API that gets info about Employee"""
+""" Script that uses API to get info about employee """
 import requests
 import sys
 
 
-def get_employee_progress(employee_id: int):
-    """ Get employee progress
+if __name__ == "__main__":
+    url = 'https://jsonplaceholder.typicode.com/'
 
-    Args:
-            employee_id (int): id of employee
-    """
-    base_url: str = "https://jsonplaceholder.typicode.com"
-    employee_url: str = f"{base_url}/users/{employee_id}"
-    todos_url: str = f"{base_url}/todos?userId={employee_id}"
+    user = '{}users/{}'.format(url, sys.argv[1])
+    response = requests.get(user)
+    json_o = response.json()
+    print("Employee {} is done with tasks".format(json_o.get('name')), end="")
 
-    employee_reponse: str = requests.get(employee_url)
-    if employee_reponse.status_code != 200:
-        print("Failed to fetch employe info")
-        return
+    todos = '{}todos?userId={}'.format(url, sys.argv[1])
+    response = requests.get(todos)
+    tasks = response.json()
+    l_task = []
+    for task in tasks:
+        if task.get('completed') is True:
+            l_task.append(task)
 
-    employee_data: str = employee_reponse.json()
-    employee_name: str = employee_data['name']
-
-    todos_response: str = requests.get(todos_url)
-    if todos_response.status_code != 200:
-        print("Failed to fetch employee's todos")
-        return
-
-    todos_data: str = todos_response.json()
-    total_tasks: int = len(todos_data)
-    done_task = [task for task in todos_data if task['completed']]
-
-    print(f"Employee {employee_name} is done with tasks
-          ({len(done_task)}/{total_tasks}): ")
-    for task in done_task:
-        print(f"\t{task['title']}")
-
-
-if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Usage: script EMLOYEE_ID')
-        sys.exit(1)
-
-    employee_id: int = int(sys.argv[1])
-    get_employee_progress(employee_id)
+    print("({}/{}):".format(len(l_task), len(tasks)))
+    for task in l_task:
+        print("\t {}".format(task.get("title")))
