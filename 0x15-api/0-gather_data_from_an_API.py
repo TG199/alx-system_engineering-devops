@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""
-Employee API
-"""
+""" Script API that gets info about Employee"""
 import requests
 import sys
 
 
 def get_employee_progress(employee_id: int):
-    """Get employee progress
+    """ Get employee progress
 
     Args:
             employee_id (int): id of employee
