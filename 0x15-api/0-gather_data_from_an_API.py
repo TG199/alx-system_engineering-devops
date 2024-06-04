@@ -7,6 +7,11 @@ import sys
 
 
 def get_employee_progress(employee_id: int):
+    """Get employee progress
+
+    Args:
+            employee_id (int): id of employee
+    """
     base_url: str = "https://jsonplaceholder.typicode.com"
     employee_url: str = f"{base_url}/users/{employee_id}"
     todos_url: str = f"{base_url}/todos?userId={employee_id}"
