@@ -4,6 +4,12 @@ import requests
 
 
 def number_of_subscribers(subreddit):
+    """
+    Get the total number of subscribers for a given subreddit
+    Args: subreddit
+
+    Return: No of subscribers
+    """
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {'User-Agent': 'Mozilla/5.0'}
 
